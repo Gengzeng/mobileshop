@@ -3,7 +3,6 @@ package servlet;
 import cn.itcast.servlet.BaseServlet;
 import dao.UserDao;
 import domain.User;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
