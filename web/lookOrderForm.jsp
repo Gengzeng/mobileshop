@@ -25,19 +25,24 @@
           con=DriverManager.getConnection(uri,user,password);
           sql=con.createStatement();
           String cdn=
-         "SELECT id,mess,sum FROM orderform where logname= '"+loginBean.getLogname()+"'";
+         "SELECT id,mess,sum,status FROM orderform where logname= '"+loginBean.getLogname()+"'";
           rs=sql.executeQuery(cdn);
           out.print("<table border=2>");
           out.print("<tr>");
             out.print("<th width=100>"+"订单号");
             out.print("<th width=100>"+"信息");
             out.print("<th width=100>"+"价格");
+            out.print("<th width=100>"+"操作");
           out.print("</TR>");
           while(rs.next()){
             out.print("<tr>");
               out.print("<td >"+rs.getString(1)+"</td>"); 
               out.print("<td >"+rs.getString(2)+"</td>");
               out.print("<td >"+rs.getString(3)+"</td>");
+              if (rs.getString(4) .equals("0")  ) {
+                  out.print("<td ><A href=\"http://localhost:8080/orderServlet?method=deleteById&id=" + rs.getString(1) + "\"><font size=2>删除</font></A></td>");
+              }
+              else {out.print("<td >已审核</td>");}
               out.print("</tr>") ; 
           }
           out.print("</table>");

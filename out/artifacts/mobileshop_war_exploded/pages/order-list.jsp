@@ -116,7 +116,7 @@
 										<th class="sorting_desc">订单所有者</th>
 										<th class="sorting_desc">订单详细信息</th>
 										<th class="sorting_desc">总计</th>
-
+										<th class="sorting_desc">状态</th>
 										<th class="text-center">操作</th>
 									</tr>
 								</thead>
@@ -129,9 +129,10 @@
 											<td>${order.logname }</td>
 											<td>${order.mess }</td>
 											<td>${order.sum }</td>
+											<td>${order.statusStr }</td>
 
 											<td class="text-center">
-
+												<a href="${pageContext.request.contextPath}/OrderServlet?method=auditById&id=${order.id}" class="btn bg-olive btn-xs">审核</a>
 												<a href="${pageContext.request.contextPath}/OrderServlet?method=deleteById&id=${order.id}" class="btn bg-olive btn-xs">删除</a>
 											</td>
 										</tr>

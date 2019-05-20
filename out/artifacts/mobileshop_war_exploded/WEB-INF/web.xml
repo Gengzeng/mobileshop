@@ -68,6 +68,18 @@
     <servlet-name>exitServlet</servlet-name>
     <url-pattern>/exitServlet</url-pattern>
   </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>orderServlet</servlet-name>
+    <servlet-class>myservlet.control.orderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>orderServlet</servlet-name>
+    <url-pattern>/orderServlet</url-pattern>
+  </servlet-mapping>
+
+
   <servlet>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>servlet.UserServlet</servlet-class>

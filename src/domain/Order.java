@@ -6,6 +6,35 @@ public class Order {
     private String logname;
     private String mess;
     private double sum;
+    private int status;
+    private String statusStr;
+
+    public String getStatusStr() {
+
+        if (status == 1){
+           statusStr = "已审核";
+
+        }
+        else {
+            statusStr = "未审核";
+        }
+        return statusStr;
+    }
+
+    public void setStatusStr(String statusStr) {
+        this.statusStr = statusStr;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+
+
 
     public int getId() {
         return id;

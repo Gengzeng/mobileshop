@@ -66,7 +66,7 @@
      out.print("</table>");
      out.print("产品详情:<br>");
      out.println("<div align=center>"+detailMess+"</div>");
-     String pic ="<img src='http://localhost:8888/mobileshop/image/"+picture+"' width=260 height=200 ></img>";
+     String pic ="<img src='http://localhost:8080/image/"+picture+"' width=260 height=200 ></img>";
      out.print(pic); //产片图片
      con.close();                 
   }

@@ -57,4 +57,23 @@ public class OrderServlet extends BaseServlet {
 
     }
 
+    /**
+     * 审核订单
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     */
+    public String auditById(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int orderId = Integer.parseInt(request.getParameter("id"));
+        orderDao.auditById(orderId);
+
+        return "r:/OrderServlet?method=findAll";
+
+    }
+
 }

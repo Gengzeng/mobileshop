@@ -43,12 +43,13 @@ public class HandleBuyGoods extends HttpServlet {
       Connection con; 
       PreparedStatement sql;
       try{ con=DriverManager.getConnection(uri);
-           String insertCondition="INSERT INTO orderform VALUES (?,?,?,?)";
+           String insertCondition="INSERT INTO orderform  VALUES (?,?,?,?,?)";
            sql=con.prepareStatement(insertCondition);
            sql.setInt(1,0); //订单序号会自定增加
            sql.setString(2,loginBean.getLogname());
            sql.setString(3,buyGoodsMess);
            sql.setFloat(4,sum);
+           sql.setFloat(5,0);
            sql.executeUpdate();
            LinkedList car=loginBean.getCar();
            car.clear();  //清空购物车

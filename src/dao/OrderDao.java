@@ -65,5 +65,18 @@ public class OrderDao {
         return order;
     }
 
+    /**
+     * 根据id审核订单
+     * @param id
+     */
+    public void auditById(int id) {
 
+        String sql = "update orderform set status = 1 where id =?";
+
+        try {
+            qr.update(sql, id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
